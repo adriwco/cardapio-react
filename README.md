@@ -1,2 +1,2 @@
 # cardapio-react
-Jornada JS - Dev Point | Cardápio Digital
+Jornada JS - Dev Point | Cardápio Digital em React
