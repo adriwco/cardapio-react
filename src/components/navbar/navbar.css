@@ -1,0 +1,31 @@
+.navbar-container{
+  background: url('../../assets/bg-navbar.png');
+  background-size: contain;
+  background-repeat: repeat-x;
+  height: 150px;
+  margin-top: 0;
+}
+.container-elemento{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.logotipo{
+  max-width: 100px;
+  padding: 10px;
+}
+.menu{
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.menu a{ 
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.menu a:hover{
+  color: #d24434;
+}

@@ -1,0 +1,27 @@
+.produto-vetrine-box{
+  border: 2px solid #e9e9e9;
+  border-radius: 18px;
+  padding: 10px 10px 20px 10px;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 15px;
+}
+.produto-vetrine-info{
+  display: grid;
+  gap: 15px;
+  justify-items: center;
+}
+.produto-vetrine-info p{
+  color: #acacac;
+  font-size: 1rem;
+}
+.produto-vetrine-info span{
+  color: #e84f3d;
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1rem;
+}
+.btn-cart{
+  display: flex;
+}

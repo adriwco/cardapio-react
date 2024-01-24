@@ -1,0 +1,23 @@
+.header-content {
+  margin-top: 30px;
+  text-align: center;
+  display: grid;
+  gap: 30px;
+}
+.header-content h1 {
+  font-size: 2.5rem;
+}
+.header-content p {
+  color: #747272;
+  font-size: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.product-list{
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-items: center;
+  align-items: center;
+  gap: 30px;
+}
