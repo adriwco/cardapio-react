@@ -1,0 +1,78 @@
+.finalizar-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+.finalizar-section section{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+}
+@media (min-width: 640px) and (max-width: 1000px) {
+  .finalizar-section {
+    grid-template-columns: 1fr 1fr;
+  }
+  .finalizar-section section:nth-child(3){
+    grid-column: 1/-1;
+    width: 50%;
+    justify-self: center;
+  }
+}
+.finalizar-section h2{
+  margin-bottom: 30px;
+  font-size: 1.3rem;
+}
+.finalizar-section label{
+font-weight: bold;
+}
+.finalizar-label-input{
+  display: grid;
+  text-align: start;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.label-input-especial{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.label-input-especial .finalizar-label-input{
+  margin-bottom: 20px;
+}
+.checkout-finalizar-titulo{
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 30px;
+}
+.checkout-finalizar{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  position: relative;
+  height: 100%;
+  padding-bottom: 90px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.checkout-finalizar span{
+  justify-self: start;
+}
+.checkout-finalizar strong{
+  justify-self: end;
+}
+.checkout-finalizar button{
+  height: 60px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 0;
+  border-radius: 10px;
+  background-color: #e84f3d;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 90px;
+  left: 0px;
+  width: 100%;
+}

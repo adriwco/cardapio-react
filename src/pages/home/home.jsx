@@ -4,7 +4,7 @@ import "./home.css";
 export default function Home() {
   return (
     <header>
-      <Navbar />
+      <Navbar showMenu={true} />
       <div className="container header-content">
         <h1>Nosso Cardápio</h1>
         <p>
