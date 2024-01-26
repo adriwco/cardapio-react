@@ -1,0 +1,48 @@
+.lista-historico {
+  display: grid;
+  border: 3px solid #eee;
+  border-radius: 20px;
+}
+.lista-historico li:not(:last-child) {
+  border-bottom: 3px solid #eee;
+}
+.lista-info {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+}
+.lista-info h2 {
+  justify-self: start;
+  font-size: 1.2rem;
+}
+.lista-info-p{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  color: #747474;
+}
+.lista-info-p p:nth-child(1){
+font-size: 1rem;
+}
+.lista-info-p p:nth-child(2){
+  text-align: end;
+  width: 100%;
+  color: #cd3e2e;
+  font-weight: bold;
+}
+@media (max-width: 800px) {
+  .lista-info {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .lista-info {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .lista-info h2 {
+    width: 100%;
+    text-align: center;
+  }
+}
