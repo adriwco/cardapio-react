@@ -1,5 +1,6 @@
 import Navbar from "../../components/navbar/navbar.jsx";
 import ProdutoVitrine from "../../components/produto-vetrine/produto-vetrine.jsx";
+import { produtos } from "../../dados.js";
 import "./home.css";
 export default function Home() {
   return (
@@ -15,10 +16,18 @@ export default function Home() {
 
       <section className="container" aria-label="Lista de Produtos Disponíveis">
         <ul className="product-list">
-          <ProdutoVitrine />
-          <ProdutoVitrine />
-          <ProdutoVitrine />
-          <ProdutoVitrine />
+          {produtos.map((produto) => {
+            return (
+              <ProdutoVitrine
+                key={produto.id}
+                id={produto.id}
+                nome={produto.nome}
+                descricao={produto.descricao}
+                preco={produto.preco}
+                foto={produto.foto}
+              />
+            );
+          })}
         </ul>
       </section>
     </header>
