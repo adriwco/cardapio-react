@@ -1,7 +1,21 @@
 import "./produto-vetrine.css";
-import foto from "../../assets/hamburguer.png";
 import bag from "../../assets/bag-black.png";
+import { CartContext } from "../../contexts/cart-context";
+import { useContext } from "react";
 export default function ProdutoVitrine(props) {
+  const { AddItemCard } = useContext(CartContext);
+
+  function AddItem() {
+    const item = {
+      id: props.id,
+      nome: props.nome,
+      preco: props.preco,
+      foto: props.foto,
+      qtd: 1,
+    };
+    AddItemCard(item);
+  }
+
   return (
     <li className="produto-vetrine-box" role="contentinfo">
       <img src={props.foto} alt={props.nome} />
@@ -14,7 +28,11 @@ export default function ProdutoVitrine(props) {
             currency: "BRL",
           }).format(props.preco)}
         </span>
-        <button className="btn-cart" aria-label="Adicionar ao carrinho">
+        <button
+          onClick={AddItem}
+          className="btn-cart"
+          aria-label="Adicionar ao carrinho"
+        >
           <img src={bag} className="icon" alt="" />
           <div>Comprar</div>
         </button>

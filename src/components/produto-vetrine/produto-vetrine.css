@@ -12,6 +12,9 @@
   gap: 15px;
   justify-items: center;
 }
+.produto-vetrine-info h2{
+  font-size: 1.1rem;
+}
 .produto-vetrine-info p{
   color: #acacac;
   font-size: 1rem;
