@@ -1,14 +1,14 @@
+import "./cart.css";
 import { useEffect, useState, useContext } from "react";
 import { Dock } from "react-dock";
 import ProdutoCart from "../produto-cart/produto-cart.jsx";
-import "./cart.css";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../contexts/cart-context.jsx";
 
 export default function Cart() {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
-  const {cartItems} = useContext(CartContext)
+  const { cartItems } = useContext(CartContext);
 
   useEffect(() => {
     window.addEventListener("openSidebar", function () {
@@ -36,15 +36,18 @@ export default function Cart() {
 
         <section aria-label="Lista de Pedido">
           <ul className="product-list-pedido">
-            {
-              cartItems.map((item)=>{
-                return <ProdutoCart key={item.id} id={item.id}
-                nome={item.nome}
-                preco={item.preco}
-                foto={item.foto}
-                qtd={item.qtd}/>
-              })
-            }
+            {cartItems.map((item) => {
+              return (
+                <ProdutoCart
+                  key={item.id}
+                  id={item.id}
+                  nome={item.nome}
+                  preco={item.preco}
+                  foto={item.foto}
+                  qtd={item.qtd}
+                />
+              );
+            })}
           </ul>
         </section>
 

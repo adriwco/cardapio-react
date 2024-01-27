@@ -1,7 +1,25 @@
 import "./produto-cart.css";
-import foto from "../../assets/hamburguer.png";
+import { CartContext } from "../../contexts/cart-context";
+import { useContext } from "react";
 
 export default function ProdutoCart(props) {
+  const { AddItemCard, RemoveItemCard } = useContext(CartContext);
+
+  function AddItem() {
+    const item = {
+      id: props.id,
+      nome: props.nome,
+      preco: props.preco,
+      qtd: 1,
+      foto: props.foto,
+    };
+    AddItemCard(item);
+  }
+
+  function RemoveItem() {
+    RemoveItemCard(props.id);
+  }
+
   return (
     <li className="produto-cart-box">
       <div>
@@ -9,20 +27,24 @@ export default function ProdutoCart(props) {
       </div>
       <div className="produto-cart-info">
         <h2>{props.nome}</h2>
-        <p aria-label="preço da unidade">{new Intl.NumberFormat("pt-BR", {
+        <p aria-label="preço da unidade">
+          {new Intl.NumberFormat("pt-BR", {
             style: "currency",
             currency: "BRL",
-          }).format(props.preco)}</p>
+          }).format(props.preco)}
+        </p>
         <div className="produto-cart-quantidade">
           <div className="produto-cart-operador">
-            <button>-</button>
-            <span>01</span>
-            <button>+</button>
+            <button onClick={RemoveItem}>-</button>
+            <span>{props.qtd}</span>
+            <button onClick={AddItem}>+</button>
           </div>
-          <p aria-label="subtotal">{new Intl.NumberFormat("pt-BR", {
-            style: "currency",
-            currency: "BRL",
-          }).format(props.preco)}</p>
+          <p aria-label="subtotal">
+            {new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(props.preco * props.qtd)}
+          </p>
         </div>
       </div>
     </li>

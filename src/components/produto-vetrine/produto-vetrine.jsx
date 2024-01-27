@@ -2,6 +2,7 @@ import "./produto-vetrine.css";
 import bag from "../../assets/bag-black.png";
 import { CartContext } from "../../contexts/cart-context";
 import { useContext } from "react";
+
 export default function ProdutoVitrine(props) {
   const { AddItemCard } = useContext(CartContext);
 
@@ -10,8 +11,8 @@ export default function ProdutoVitrine(props) {
       id: props.id,
       nome: props.nome,
       preco: props.preco,
-      foto: props.foto,
       qtd: 1,
+      foto: props.foto,
     };
     AddItemCard(item);
   }
