@@ -14,8 +14,9 @@ export default function Navbar(props) {
     <>
       <nav className="navbar-container">
         <div className="container container-elemento">
-          <img src={logo} className="logotipo" alt="Logotipo da Empresa" />
-
+          <Link to="/" className="logotipo" >
+            <img src={logo} alt="Logotipo da Empresa" />
+          </Link>
           {props.showMenu ? (
             <div className="menu">
               <Link to="/historico" title="Veja o Histórico da Empresa">

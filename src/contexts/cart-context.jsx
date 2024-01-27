@@ -2,6 +2,7 @@ import { createContext, useState } from "react";
 const CartContext = createContext();
 function CartProvider(props) {
   const [cartItems, setCartItems] = useState([]);
+  const [totalCart, setTotalCart] = useState(0);
 
   function AddItemCard(item) {
     let cartItensNovo = [];
@@ -22,6 +23,7 @@ function CartProvider(props) {
       cartItensNovo.push(item);
     }
     setCartItems(cartItensNovo); // setCartItems([...cartItems, item]);
+    CalcTotal(cartItensNovo);
   }
 
   function RemoveItemCard(id) {
@@ -40,11 +42,26 @@ function CartProvider(props) {
     });
 
     setCartItems(cartItensNovo); // setCartItems([...cartItems, item]);
+    CalcTotal(cartItensNovo);
+  }
+
+  function CalcTotal(items) {
+    let tot = 0;
+    for (let item of items) {
+      tot = tot + item.preco * item.qtd;
+      setTotalCart(tot);
+    }
   }
 
   return (
     <CartContext.Provider
-      value={{ cartItems, setCartItems, AddItemCard, RemoveItemCard }}
+      value={{
+        cartItems,
+        setCartItems,
+        AddItemCard,
+        RemoveItemCard,
+        totalCart,
+      }}
     >
       {props.children}
     </CartContext.Provider>

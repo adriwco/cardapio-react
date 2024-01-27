@@ -8,7 +8,7 @@ import { CartContext } from "../../contexts/cart-context.jsx";
 export default function Cart() {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, totalCart } = useContext(CartContext);
 
   useEffect(() => {
     window.addEventListener("openSidebar", function () {
@@ -54,7 +54,12 @@ export default function Cart() {
         <div className="preco-final">
           <span>Preço Final:</span>
           <span>
-            <strong>R$ 150,00</strong>
+            <strong>
+              {new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              }).format(totalCart)}
+            </strong>
           </span>
           <button onClick={checkout}>Finalizar Pedido</button>
         </div>

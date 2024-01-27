@@ -1,8 +1,12 @@
 import Navbar from "../../components/navbar/navbar.jsx";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { CartContext } from "../../contexts/cart-context.jsx";
 
 import "./checkout.css";
 export default function Checkout() {
+
+  const {totalCart} = useContext(CartContext)
+
   const [estadoSelecionado, setEstadoSelecionado] = useState("");
   const estadosBrasil = [
     { nome: "Acre", abreviacao: "AC" },
@@ -148,7 +152,10 @@ export default function Checkout() {
             <h2 className="checkout-finalizar-titulo">Valores</h2>
             <div className="checkout-finalizar">
               <span>Total</span>
-              <strong>R$ 50,00</strong>
+              <strong>{new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              }).format(totalCart)}</strong>
               <button>Finalizar Pedido</button>
             </div>
           </section>
